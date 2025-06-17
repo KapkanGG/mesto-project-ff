@@ -1,11 +1,3 @@
-export function deleteCard(cardElement) {
-	cardElement.remove()
-}
-
-export function handleLikeButtonClick(evt) {
-	evt.target.classList.toggle('card__like-button_is-active')
-}
-
 export function createCard(
 	cardData,
 	cardTemplate,

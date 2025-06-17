@@ -1,3 +1,9 @@
+// Функция для отключения кнопки
+const disableButton = (buttonElement, settings) => {
+	buttonElement.disabled = true
+	buttonElement.classList.add(settings.inactiveButtonClass)
+}
+
 // Функция для показа ошибки валидации
 const showInputError = (formElement, inputElement, errorMessage, settings) => {
 	const errorElement = formElement.querySelector(`.${inputElement.id}-error`)
@@ -44,8 +50,7 @@ const hasInvalidInput = inputList => {
 // Функция для переключения состояния кнопки
 const toggleButtonState = (inputList, buttonElement, settings) => {
 	if (hasInvalidInput(inputList)) {
-		buttonElement.disabled = true
-		buttonElement.classList.add(settings.inactiveButtonClass)
+		disableButton(buttonElement, settings)
 	} else {
 		buttonElement.disabled = false
 		buttonElement.classList.remove(settings.inactiveButtonClass)
@@ -89,6 +94,5 @@ export const clearValidation = (formElement, settings) => {
 		inputElement.setCustomValidity('')
 	})
 
-	buttonElement.disabled = true
-	buttonElement.classList.add(settings.inactiveButtonClass)
+	disableButton(buttonElement, settings)
 }
