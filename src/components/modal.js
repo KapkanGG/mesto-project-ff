@@ -29,6 +29,3 @@ export function setupModal(popup) {
 		}
 	})
 }
-
-
-/*Спасибо за ревью :з*/
